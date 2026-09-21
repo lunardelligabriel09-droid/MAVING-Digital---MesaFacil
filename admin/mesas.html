@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MesaFácil — Mesas &amp; QR Code</title>
+  <link rel="stylesheet" href="/app/shared/css/base.css" />
+  <link rel="stylesheet" href="/app/admin/css/admin.css" />
+</head>
+<body>
+  <div class="layout-admin">
+    <aside class="barra-lateral">
+      <div class="marca-admin">
+        <img src="/app/shared/img/logo.svg" alt="" width="34" height="34" />
+        <div><strong>MesaFácil</strong><span>Administração</span></div>
+      </div>
+      <ul class="menu-admin">
+        <li><a href="/admin/dashboard">Painel</a></li>
+        <li><a href="/admin/produtos">Produtos</a></li>
+        <li><a href="/admin/categorias">Categorias</a></li>
+        <li><a href="/admin/mesas">Mesas &amp; QR Code</a></li>
+        <li><a href="/admin/usuarios">Usuários</a></li>
+      </ul>
+      <div class="rodape-lateral">
+        <span class="nome-usuario" id="nome-usuario-admin">—</span>
+        <button id="btn-sair-admin" class="btn btn-secundaria btn-pequeno btn-bloco">Sair</button>
+      </div>
+    </aside>
+
+    <div class="area-principal">
+      <header class="topo-admin">
+        <button id="btn-abrir-menu" class="btn-abrir-menu">☰</button>
+        <h1>Mesas &amp; QR Code</h1>
+      </header>
+      <main class="conteudo-admin">
+        <div id="alerta-mesas"></div>
+        <div class="barra-acoes">
+          <span class="somente-leitura-texto">Cada mesa possui um QR Code exclusivo usado pelo cliente para iniciar o atendimento.</span>
+          <button class="btn btn-primaria" id="btn-nova-mesa">+ Nova mesa</button>
+        </div>
+        <div class="tabela-scroll">
+          <table class="tabela-admin">
+            <thead>
+              <tr><th>Mesa</th><th>Status</th><th>Ações</th></tr>
+            </thead>
+            <tbody id="corpo-tabela-mesas">
+              <tr><td colspan="3" class="carregando">Carregando…</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <div id="modal-mesa" class="modal-admin oculto">
+    <div class="modal-admin-conteudo">
+      <button class="modal-admin-fechar" id="btn-fechar-modal-mesa">×</button>
+      <h2>Nova mesa</h2>
+      <div id="alerta-modal-mesa"></div>
+      <form id="form-mesa">
+        <div class="campo">
+          <label for="mesa-numero">Número da mesa</label>
+          <input type="number" id="mesa-numero" min="1" required />
+        </div>
+        <div class="acoes-modal">
+          <button type="submit" class="btn btn-primaria">Salvar</button>
+          <button type="button" class="btn btn-texto" id="btn-cancelar-mesa">Cancelar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="modal-qrcode" class="modal-admin oculto">
+    <div class="modal-admin-conteudo texto-centro">
+      <button class="modal-admin-fechar" id="btn-fechar-modal-qrcode">×</button>
+      <h2 id="titulo-modal-qrcode">QR Code</h2>
+      <img id="imagem-qrcode" class="preview-imagem" style="height:220px;object-fit:contain" alt="QR Code da mesa" />
+      <p class="campo-ajuda" id="url-qrcode"></p>
+      <div class="acoes-modal">
+        <button type="button" class="btn btn-secundaria" id="btn-imprimir-qrcode">Imprimir</button>
+        <button type="button" class="btn btn-perigo" id="btn-regenerar-qrcode">Gerar novo código</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/app/shared/js/api.js"></script>
+  <script src="/app/admin/js/admin-shell.js"></script>
+  <script src="/app/admin/js/mesas.js"></script>
+</body>
+</html>
