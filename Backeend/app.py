@@ -50,5 +50,91 @@ app.register_blueprint(usuario_bp)
 def uploads(filename):
     return send_from_directory(UPLOADS_DIR, filename)
 
+# Frontend estático (HTML/CSS/JS puro) servido pelo mesmo processo
+# para permitir execução local com um único comando.
+
+@app.get("/app/<path:filepath>")
+def frontend_assets(filepath):
+    return send_from_directory(FRONTEND_DIR, filepath)
+
+
+@app.get("/")
+def home():
+    return send_from_directory(FRONTEND_DIR / "admin", "login.html")
+
+
+@app.get("/mesa/<token>")
+def pagina_cliente(token):
+    return send_from_directory(FRONTEND_DIR / "cliente", "index.html")
+
+
+@app.get("/cozinha")
+def pagina_cozinha():
+    return send_from_directory(FRONTEND_DIR / "cozinha", "index.html")
+
+
+@app.get("/caixa")
+def pagina_caixa():
+    return send_from_directory(FRONTEND_DIR / "caixa", "index.html")
+
+
+@app.get("/caixa/comanda")
+def pagina_caixa_comanda():
+    return send_from_directory(FRONTEND_DIR / "caixa", "comanda.html")
+
+
+@app.get("/admin/login")
+def pagina_admin_login():
+    return send_from_directory(FRONTEND_DIR / "admin", "login.html")
+
+
+@app.get("/admin")
+@app.get("/admin/dashboard")
+def pagina_admin_dashboard():
+    return send_from_directory(FRONTEND_DIR / "admin", "dashboard.html")
+
+
+@app.get("/admin/produtos")
+def pagina_admin_produtos():
+    return send_from_directory(FRONTEND_DIR / "admin", "produtos.html")
+
+
+@app.get("/admin/categorias")
+def pagina_admin_categorias():
+    return send_from_directory(FRONTEND_DIR / "admin", "categorias.html")
+
+
+@app.get("/admin/mesas")
+def pagina_admin_mesas():
+    return send_from_directory(FRONTEND_DIR / "admin", "mesas.html")
+
+
+@app.get("/admin/usuarios")
+def pagina_admin_usuarios():
+    return send_from_directory(FRONTEND_DIR / "admin", "usuarios.html")
+
+
+
+# Tratamento padrão de erros
+
+@app.errorhandler(404)
+def not_found(_exc):
+    return error("Recurso não encontrado.", status=404)
+
+
+@app.errorhandler(405)
+def method_not_allowed(_exc):
+    return error("Método não permitido para este endpoint.", status=405)
+
+
+@app.errorhandler(500)
+def internal_error(_exc):
+    return error("Erro interno do servidor.", status=500)
+
+
+if __name__ == "__main__":
+    app.run(host=Config.FLASK_HOST, port=Config.FLASK_PORT, debug=Config.FLASK_DEBUG)
+
+
 
 
