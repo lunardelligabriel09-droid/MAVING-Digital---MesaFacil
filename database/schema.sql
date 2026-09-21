@@ -1,5 +1,5 @@
 
--- MesaFacil - Schema do banco de dados --
+-- MesaFacil - Schema do banco de dados 
 
 CREATE DATABASE IF NOT EXISTS mesafacil
   CHARACTER SET utf8mb4
