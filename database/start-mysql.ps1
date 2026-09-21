@@ -43,7 +43,3 @@ if ($conexao) {
     Write-Output "MySQL nao respondeu na porta 3306."
     Write-Output "Verifique o log: $dataDir\server.log"
 }
- 
-  Write-Output "MySQL nao respondeu na porta 3306."
-    Write-Output "Verifique o log: $dataDir\server.log"
-}
