@@ -1,7 +1,6 @@
 # MesaFácil
 
-Sistema integrado de gerenciamento de pedidos para a **Trattoria Famiglia
-Rossi**, restaurante italiano tradicional de Curitiba. Projeto Integrador de
+Sistema integrado de gerenciamento de pedidos para a **Sabor & Mesa**, restaurante italiano tradicional de Curitiba. Projeto Integrador de
 Desenvolvimento de Sistemas.
 
 O cliente faz o pedido pelo próprio celular, escaneando o QR Code da mesa.
@@ -179,4 +178,4 @@ Testada nos breakpoints 320/375/390/430/768/1024/1280/1440px:
   pagamento é sempre conferido manualmente pelo caixa antes do fechamento.
 - Atualização de status usa *polling* (verificação periódica) em vez de
   WebSocket, por ser mais simples e suficientemente responsivo para o
-  caso de uso de um restaurante.
+  caso de uso de um restaurante
