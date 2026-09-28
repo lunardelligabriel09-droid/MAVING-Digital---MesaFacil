@@ -297,3 +297,36 @@
   max-width: 160px;
   margin: 0 auto 10px;
 }
+
+/* ---------------------------------------------------------
+   Responsividade
+   --------------------------------------------------------- */
+@media (max-width: 900px) {
+  .barra-lateral {
+    position: fixed;
+    left: -230px;
+    z-index: 50;
+    transition: left 0.2s ease;
+    box-shadow: var(--sombra-elevada);
+  }
+
+  .barra-lateral.aberta {
+    left: 0;
+  }
+
+  .btn-abrir-menu {
+    display: inline-flex;
+  }
+
+  .conteudo-admin {
+    padding: 18px 16px 40px;
+  }
+
+  .topo-admin {
+    padding: 14px 16px;
+  }
+
+  .linha-form-dupla {
+    grid-template-columns: 1fr;
+  }
+}
