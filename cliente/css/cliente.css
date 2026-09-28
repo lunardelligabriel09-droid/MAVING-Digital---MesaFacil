@@ -453,3 +453,9 @@ body {
   font-size: 0.65rem;
   padding: 1px 6px;
 }
+
+@media (min-width: 640px) {
+  .contador-nav {
+    right: 40%;
+  }
+}
