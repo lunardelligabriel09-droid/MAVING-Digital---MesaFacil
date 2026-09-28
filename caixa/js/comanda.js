@@ -95,4 +95,34 @@
         `);
       });
     });
+    el("resumo-impressao").innerHTML = `
+      <h1>Trattoria Famiglia Rossi</h1>
+      <div class="subtitulo">MesaFácil — Resumo da Comanda</div>
+      <div class="linha"></div>
+      <div>Comanda: #${comanda.id_comanda}</div>
+      <div>Cliente: ${comanda.nome_cliente}</div>
+      <div>Mesa: ${String(comanda.numero_mesa).padStart(2, "0")}</div>
+      <div>Data/Hora: ${new Date().toLocaleString("pt-BR")}</div>
+      <div class="linha"></div>
+      <table>${linhas.join("")}</table>
+      <div class="linha"></div>
+      <div class="total"><span>TOTAL</span><span>${formatarMoeda(comanda.valor_total)}</span></div>
+    `;
+  }
+
+  el("btn-imprimir").addEventListener("click", () => window.print());
+
+  el("btn-fechar-comanda").addEventListener("click", async () => {
+    if (!confirm("Confirmar o fechamento desta comanda? Esta ação não pode ser desfeita.")) return;
+    try {
+      await MesaFacilAPI.put(`/api/comandas/${idComanda}/fechar`);
+      await carregar();
+      el("alerta-comanda").innerHTML = '<div class="alerta alerta-sucesso">Comanda fechada com sucesso.</div>';
+    } catch (err) {
+      el("alerta-comanda").innerHTML = `<div class="alerta alerta-erro">${err.message}</div>`;
+    }
+  });
+
+  carregar();
+})();
 
