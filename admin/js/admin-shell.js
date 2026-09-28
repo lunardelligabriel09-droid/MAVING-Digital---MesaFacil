@@ -37,9 +37,5 @@ const AdminShell = (() => {
     return usuario;
   }
 
-      return usuario;
-  }
-
-
   return { inicializar };
 })();
