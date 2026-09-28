@@ -316,3 +316,28 @@ body {
   min-width: 24px;
   text-align: center;
 }
+
+/* ---------------------------------------------------------
+   Carrinho
+   --------------------------------------------------------- */
+.item-carrinho {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  background: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  padding: 12px;
+  margin-bottom: 10px;
+}
+
+.item-carrinho-info strong {
+  display: block;
+  margin-bottom: 2px;
+}
+
+.item-carrinho-obs {
+  font-size: 0.8rem;
+  color: var(--cor-texto-suave);
+  font-style: italic;
+}
