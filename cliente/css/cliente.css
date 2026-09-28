@@ -438,3 +438,18 @@ body {
   position: relative;
   min-height: 56px;
 }
+
+.nav-item.ativo {
+  color: var(--cor-primaria);
+}
+
+.contador-nav {
+  position: absolute;
+  top: 4px;
+  right: 30%;
+  background: var(--cor-primaria);
+  color: #fff;
+  border-radius: 999px;
+  font-size: 0.65rem;
+  padding: 1px 6px;
+}
