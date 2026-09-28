@@ -142,3 +142,74 @@
   font-family: var(--fonte-titulo);
 }
 
+/* ---------------------------------------------------------
+   Barra de ações, com tabelas
+   --------------------------------------------------------- */
+.barra-acoes {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.barra-acoes input[type="search"] {
+  padding: 10px 14px;
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-pequeno);
+  min-width: 220px;
+}
+
+.tabela-scroll {
+  overflow-x: auto;
+  background: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+}
+
+.tabela-admin {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 640px;
+}
+
+.tabela-admin th,
+.tabela-admin td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--cor-borda);
+  font-size: 0.9rem;
+  vertical-align: middle;
+}
+
+.tabela-admin th {
+  color: var(--cor-texto-suave);
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+}
+
+.tabela-admin img.miniatura {
+  width: 44px;
+  height: 44px;
+  object-fit: cover;
+  border-radius: var(--raio-pequeno);
+  background: var(--cor-fundo-alt);
+}
+
+.tabela-admin .acoes-linha {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.selo-status-ativo {
+  background: var(--cor-sucesso-bg);
+  color: var(--cor-sucesso);
+}
+
+.selo-status-inativo {
+  background: #eee;
+  color: var(--cor-texto-suave);
+}
