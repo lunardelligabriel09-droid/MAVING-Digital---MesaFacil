@@ -391,4 +391,63 @@
       botao.textContent = "Enviar pedido";
     }
   });
-()};
+ // -----------------------------------------------------------------
+  // Observações
+  // -----------------------------------------------------------------
+  async function carregarPedidosCliente() {
+    try {
+      const resultado = await MesaFacilAPI.get(`/api/pedidos/cliente/${sessao.cliente.id_cliente}`, { autenticado: false });
+      const pedidosDaComanda = resultado.dados.filter((p) => p.id_comanda === sessao.comanda.id_comanda);
+      renderizarPedidosCliente(pedidosDaComanda);
+    } catch (err) {
+      el("lista-pedidos-cliente").innerHTML = `<div class="alerta alerta-erro">${err.message}</div>`;
+    }
+  }
+
+  function renderizarPedidosCliente(pedidos) {
+    const container = el("lista-pedidos-cliente");
+    if (pedidos.length === 0) {
+      container.innerHTML = '<div class="vazio">Você ainda não fez nenhum pedido nesta visita.</div>';
+      return;
+    }
+
+    container.innerHTML = "";
+    pedidos.forEach((pedido) => {
+      const div = document.createElement("div");
+      div.className = "cartao-pedido-cliente";
+      const itensHtml = pedido.itens.map((item) => `<li>${item.quantidade}x ${item.nome_produto}</li>`).join("");
+      const statusClasse = `selo-${pedido.nome_status.toLowerCase()}`;
+      div.innerHTML = `
+        <div class="cartao-pedido-cliente-topo">
+          <strong>Pedido #${pedido.id_pedido}</strong>
+          <span class="selo ${statusClasse}">${STATUS_LABEL[pedido.nome_status] || pedido.nome_status}</span>
+        </div>
+        <ul>${itensHtml}</ul>
+        <div class="mensagem-status">${STATUS_MENSAGEM[pedido.nome_status] || ""}</div>
+      `;
+      container.appendChild(div);
+    });
+  }
+
+  function iniciarPolling() {
+    pararPolling();
+    pollingId = setInterval(carregarPedidosCliente, INTERVALO_POLLING_MS);
+  }
+
+  function pararPolling() {
+    if (pollingId) {
+      clearInterval(pollingId);
+      pollingId = null;
+    }
+  }
+
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) {
+      pararPolling();
+    } else if (!el("aba-pedidos").classList.contains("oculto")) {
+      iniciarPolling();
+    }
+  });
+
+  iniciar();
+})()
