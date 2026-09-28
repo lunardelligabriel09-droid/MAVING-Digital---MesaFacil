@@ -1,7 +1,3 @@
-
--- MesaFácil - Dados iniciais --
-
-
 USE mesafacil;
 
 
