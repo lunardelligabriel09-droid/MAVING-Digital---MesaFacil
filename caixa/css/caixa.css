@@ -118,3 +118,55 @@
   margin-bottom: 4px;
 }
 
+.pedido-comanda {
+  background: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  padding: 16px 20px;
+  margin-bottom: 14px;
+}
+
+.pedido-comanda-topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.tabela-itens-pedido {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabela-itens-pedido th,
+.tabela-itens-pedido td {
+  text-align: left;
+  padding: 6px 4px;
+  font-size: 0.88rem;
+  border-bottom: 1px dashed var(--cor-borda);
+}
+
+.tabela-itens-pedido .col-valor {
+  text-align: right;
+  white-space: nowrap;
+}
+
+.obs-item-pedido {
+  font-size: 0.78rem;
+  color: var(--cor-texto-suave);
+  font-style: italic;
+}
+
+.resumo-total-comanda {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 20px;
+  font-size: 1.2rem;
+}
+
+.resumo-total-comanda strong {
+  color: var(--cor-primaria);
+  font-size: 1.4rem;
+}
+
