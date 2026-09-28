@@ -362,10 +362,6 @@
     el("texto-total-carrinho").textContent = formatarMoeda(total);
   }
 
-  async (cariinho) => {
-    div.queySelection
-  }
-
   el("btn-enviar-pedido").addEventListener("click", async () => {
     const botao = el("btn-enviar-pedido");
     const alerta = el("alerta-carrinho");
@@ -450,4 +446,4 @@
   });
 
   iniciar();
-})()
+})();
