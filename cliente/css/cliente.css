@@ -356,3 +356,26 @@ body {
   background: var(--cor-fundo);
   cursor: pointer;
 }
+
+.item-carrinho-preco {
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.resumo-carrinho {
+  position: sticky;
+  bottom: 70px;
+  background: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  padding: 16px;
+  margin-top: 16px;
+  box-shadow: var(--sombra-elevada);
+}
+
+.linha-total {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+}
