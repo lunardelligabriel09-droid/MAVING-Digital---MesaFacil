@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MesaFácil — Caixa</title>
+  <link rel="stylesheet" href="/app/shared/css/base.css" />
+  <link rel="stylesheet" href="/app/caixa/css/caixa.css" />
+</head>
+<body>
+  <div id="tela-login" class="tela-login">
+    <div class="cartao-login">
+      <img src="/app/shared/img/logo.svg" alt="" width="48" height="48" />
+      <h1>Caixa</h1>
+      <p class="somente-leitura-texto">MesaFácil — Trattoria Famiglia Rossi</p>
+      <div id="alerta-login"></div>
+      <form id="form-login">
+        <div class="campo">
+          <label for="input-email">E-mail</label>
+          <input type="email" id="input-email" required autocomplete="username" />
+        </div>
+        <div class="campo">
+          <label for="input-senha">Senha</label>
+          <input type="password" id="input-senha" required autocomplete="current-password" />
+        </div>
+        <button type="submit" class="btn btn-primaria btn-bloco">Entrar</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="painel-caixa" class="oculto">
+    <header class="cabecalho-caixa">
+      <h1>Comandas</h1>
+      <div class="cabecalho-acoes">
+        <span id="texto-usuario-caixa" class="somente-leitura-texto"></span>
+        <button id="btn-sair" class="btn btn-texto">Sair</button>
+      </div>
+    </header>
+
+    <main class="container conteudo-caixa">
+      <div class="filtros-caixa">
+        <button class="btn-filtro ativo" data-status="aberta">Abertas</button>
+        <button class="btn-filtro" data-status="fechada">Fechadas</button>
+        <button class="btn-filtro" data-status="">Todas</button>
+      </div>
+
+      <div class="tabela-scroll">
+        <table class="tabela-comandas">
+          <thead>
+            <tr>
+              <th>Comanda</th>
+              <th>Cliente</th>
+              <th>Mesa</th>
+              <th>Abertura</th>
+              <th>Pedidos</th>
+              <th>Total</th>
+              <th>Status</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="corpo-tabela-comandas">
+            <tr><td colspan="8" class="carregando">Carregando comandas…</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+
+ 
+</body>
+</html>

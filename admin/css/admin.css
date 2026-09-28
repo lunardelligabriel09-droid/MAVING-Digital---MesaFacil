@@ -213,3 +213,64 @@
   background: #eee;
   color: var(--cor-texto-suave);
 }
+
+/* ---------------------------------------------------------
+   Modal de formulário
+   --------------------------------------------------------- */
+
+.modal-admin {
+  position: fixed;
+  inset: 0;
+  background: rgba(43, 36, 34, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 16px;
+}
+
+.modal-admin-conteudo {
+  background: var(--cor-superficie);
+  border-radius: var(--raio);
+  padding: 26px;
+  width: 100%;
+  max-width: 520px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: var(--sombra-elevada);
+}
+
+.modal-admin-fechar {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  border: none;
+  background: var(--cor-fundo-alt);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.linha-form-dupla {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.acoes-modal {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.preview-imagem {
+  width: 100%;
+  height: 140px;
+  border-radius: var(--raio-pequeno);
+  object-fit: cover;
+  background: var(--cor-fundo-alt);
+  margin-bottom: 10px;
+}
