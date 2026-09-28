@@ -1,0 +1,144 @@
+
+.layout-admin {
+  display: flex;
+  min-height: 100vh;
+}
+
+.barra-lateral {
+  width: 230px;
+  background: var(--cor-primaria-escura);
+  color: #f3e9dc;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+.marca-admin {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 20px 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.marca-admin strong {
+  font-family: var(--fonte-titulo);
+  font-size: 1.05rem;
+  color: #fff;
+  display: block;
+}
+
+.marca-admin span {
+  font-size: 0.72rem;
+  color: #d8c4ab;
+}
+
+.menu-admin {
+  list-style: none;
+  margin: 0;
+  padding: 10px 0;
+  flex: 1;
+}
+
+.menu-admin a {
+  display: block;
+  padding: 12px 20px;
+  color: #e6d9c8;
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-weight: 600;
+  border-left: 3px solid transparent;
+}
+
+.menu-admin a:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.menu-admin a.ativo {
+  background: rgba(255, 255, 255, 0.1);
+  border-left-color: var(--cor-dourado);
+  color: #fff;
+}
+
+.rodape-lateral {
+  padding: 16px 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.rodape-lateral .nome-usuario {
+  display: block;
+  font-size: 0.85rem;
+  margin-bottom: 8px;
+  color: #f3e9dc;
+}
+
+.area-principal {
+  flex: 1;
+  min-width: 0;
+}
+
+.topo-admin {
+  background: var(--cor-superficie);
+  border-bottom: 1px solid var(--cor-borda);
+  padding: 16px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.topo-admin h1 {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.btn-abrir-menu {
+  display: none;
+  border: 1px solid var(--cor-borda);
+  background: var(--cor-superficie);
+  border-radius: var(--raio-pequeno);
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.conteudo-admin {
+  padding: 24px 28px 48px;
+  max-width: 1200px;
+}
+
+/* ---------------------------------------------------------
+   Cartões de indicadores 
+   --------------------------------------------------------- */
+.grade-indicadores {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.indicador {
+  background: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  padding: 18px 20px;
+  box-shadow: var(--sombra);
+}
+
+.indicador span {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--cor-texto-suave);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 6px;
+}
+
+.indicador strong {
+  font-size: 1.8rem;
+  color: var(--cor-primaria);
+  font-family: var(--fonte-titulo);
+}
+
