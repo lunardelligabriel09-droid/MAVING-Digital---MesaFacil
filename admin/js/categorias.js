@@ -93,14 +93,4 @@
   carregar();
 })();
 
-  async function alternarStatus(categoria) {
-    try {
-      await MesaFacilAPI.put(`/api/categorias/${categoria.id_categoria}/status`, { ativo: !categoria.ativo });
-      carregar();
-    } catch (err) {
-      el("alerta-categorias").innerHTML = `<div class="alerta alerta-erro">${err.message}</div>`;
-    }
-  }
-
-  carregar();
-})();
+ 
