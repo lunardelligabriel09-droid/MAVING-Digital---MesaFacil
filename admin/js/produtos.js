@@ -5,7 +5,20 @@
   let categorias = [];
   const formatarMoeda = (valor) => `R$ ${Number(valor).toFixed(2).replace(".", ",")}`;
 
-  
+  async function carregar() {
+    try {
+      const [resProdutos, resCategorias] = await Promise.all([
+        MesaFacilAPI.get("/api/produtos"),
+        MesaFacilAPI.get("/api/categorias"),
+      ]);
+      produtos = resProdutos.dados;
+      categorias = resCategorias.dados;
+      preencherSelectCategorias();
+      renderizar();
+    } catch (err) {
+      el("alerta-produtos").innerHTML = `<div class="alerta alerta-erro">${err.message}</div>`;
+    }
+  }
 
   function preencherSelectCategorias() {
     const select = el("produto-categoria");
