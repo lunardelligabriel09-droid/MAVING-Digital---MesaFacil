@@ -341,3 +341,18 @@ body {
   color: var(--cor-texto-suave);
   font-style: italic;
 }
+
+.item-carrinho-controles {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.item-carrinho-controles button {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid var(--cor-borda);
+  background: var(--cor-fundo);
+  cursor: pointer;
+}
