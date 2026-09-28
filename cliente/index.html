@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>MesaFácil — Cardápio</title>
+  <link rel="stylesheet" href="/app/shared/css/base.css" />
+  <link rel="stylesheet" href="/app/cliente/css/cliente.css" />
+</head>
+<body>
+  <div id="tela-carregando" class="tela-cheia texto-centro">
+    <div class="carregando">Carregando MesaFácil…</div>
+  </div>
+
+  <!-- Tela de erro -->
+  <div id="tela-erro" class="tela-cheia texto-centro oculto">
+    <div class="cartao-erro">
+      <h1>Ops!</h1>
+      <p id="texto-erro">Não foi possível identificar sua mesa.</p>
+      <p class="campo-ajuda">Chame um atendente para verificar o QR Code da mesa.</p>
+    </div>
+  </div>
+
+  <!-- Tela de identificação -->
+  <div id="tela-identificacao" class="tela-cheia oculto">
+    <div class="cartao-boas-vindas">
+      <img src="/app/shared/img/logo.svg" alt="" width="56" height="56" />
+      <h1>MesaFácil</h1>
+      <p class="subtitulo-restaurante">Trattoria Famiglia Rossi</p>
+      <p class="selo-mesa" id="selo-mesa-identificacao">Mesa —</p>
+      <p>Para começar, informe seu nome:</p>
+      <div id="alerta-identificacao"></div>
+      <form id="form-identificacao">
+        <div class="campo">
+          <label for="input-nome">Seu nome</label>
+          <input type="text" id="input-nome" name="nome" maxlength="120" required placeholder="Ex.: Gabriel" autocomplete="name" />
+        </div>
+        <button type="submit" class="btn btn-primaria btn-bloco">Ver cardápio</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Tela principal -->
+  <div id="app-cliente" class="oculto">
+    <header class="cabecalho-cliente">
+      <div class="cabecalho-info">
+        <strong id="texto-mesa">Mesa —</strong>
+        <span id="texto-cliente" class="somente-leitura-texto"></span>
+      </div>
+      <span class="marca-restaurante">MesaFácil</span>
+    </header>
+
+    <main class="conteudo-cliente">
+      
+      <section id="aba-cardapio" class="aba">
+        <div class="barra-busca">
+          <input type="search" id="input-busca" placeholder="Buscar no cardápio…" />
+        </div>
+        <nav id="lista-categorias" class="lista-categorias"></nav>
+        <div id="lista-produtos" class="lista-produtos">
+          <div class="carregando">Carregando cardápio…</div>
+        </div>
+      </section>
+
+    
+      <section id="aba-carrinho" class="aba oculto">
+        <h2>Seu pedido</h2>
+        <div id="alerta-carrinho"></div>
+        <div id="itens-carrinho"></div>
+        <div id="carrinho-vazio" class="vazio oculto">Seu carrinho está vazio. Adicione itens no cardápio.</div>
+        <div class="resumo-carrinho">
+          <div class="linha-total">
+            <span>Total</span>
+            <strong id="texto-total-carrinho">R$ 0,00</strong>
+          </div>
+          <button id="btn-enviar-pedido" class="btn btn-primaria btn-bloco" disabled>Enviar pedido</button>
+        </div>
+      </section>
+
+
+      <section id="aba-pedidos" class="aba oculto">
+        <h2>Acompanhar pedidos</h2>
+        <div id="lista-pedidos-cliente">
+          <div class="carregando">Carregando pedidos…</div>
+        </div>
+      </section>
+    </main>
+
+    <nav class="nav-inferior">
+      <button class="nav-item ativo" data-aba="cardapio">
+        <span>Cardápio</span>
+      </button>
+      <button class="nav-item" data-aba="carrinho">
+        <span>Carrinho</span>
+        <span id="contador-carrinho" class="contador-nav oculto">0</span>
+      </button>
+      <button class="nav-item" data-aba="pedidos">
+        <span>Meus Pedidos</span>
+      </button>
+    </nav>
+  </div>
+
+  <div id="modal-produto" class="modal oculto">
+    <div class="modal-conteudo">
+      <button class="modal-fechar" id="btn-fechar-modal" aria-label="Fechar">×</button>
+      <div id="modal-produto-corpo"></div>
+    </div>
+  </div>
+
+  
+</body>
+</html>
