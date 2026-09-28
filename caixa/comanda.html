@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MesaFácil — Detalhe da Comanda</title>
+  <link rel="stylesheet" href="/app/shared/css/base.css" />
+  <link rel="stylesheet" href="/app/caixa/css/caixa.css" />
+  <link rel="stylesheet" href="/app/shared/css/print.css" />
+</head>
+<body>
+  <div id="tela-login" class="tela-login">
+    <div class="cartao-login">
+      <h1>Caixa</h1>
+      <p class="somente-leitura-texto">Faça login para continuar.</p>
+      <a class="btn btn-primaria btn-bloco" href="/caixa">Ir para o login</a>
+    </div>
+  </div>
+
+  <div id="painel-comanda" class="oculto">
+    <header class="cabecalho-caixa">
+      <a href="/caixa" class="btn btn-texto">← Voltar</a>
+      <h1 id="titulo-comanda">Comanda</h1>
+      <div class="cabecalho-acoes">
+        <button id="btn-imprimir" class="btn btn-secundaria">Imprimir resumo</button>
+        <button id="btn-fechar-comanda" class="btn btn-primaria">Fechar comanda</button>
+      </div>
+    </header>
+
+    <main class="container conteudo-caixa">
+      <div id="alerta-comanda"></div>
+
+      <div class="cartao info-comanda">
+        <div><span class="rotulo">Cliente</span><strong id="info-cliente">—</strong></div>
+        <div><span class="rotulo">Mesa</span><strong id="info-mesa">—</strong></div>
+        <div><span class="rotulo">Abertura</span><strong id="info-abertura">—</strong></div>
+        <div><span class="rotulo">Status</span><strong id="info-status">—</strong></div>
+      </div>
+
+      <div id="lista-pedidos-comanda"></div>
+
+      <div class="cartao resumo-total-comanda">
+        <span>Total da comanda</span>
+        <strong id="info-total">R$ 0,00</strong>
+      </div>
+    </main>
+  </div>
+
+  <!-- Bloco exclusivo de impressão -->
+  <div class="resumo-impressao" id="resumo-impressao"></div>
+
+
+</body>
+</html>

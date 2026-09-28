@@ -274,3 +274,26 @@
   background: var(--cor-fundo-alt);
   margin-bottom: 10px;
 }
+
+/* ---------------------------------------------------------
+   QR Code das mesas
+   --------------------------------------------------------- */
+.grade-qrcodes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+.cartao-qrcode {
+  background: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  padding: 16px;
+  text-align: center;
+}
+
+.cartao-qrcode img {
+  width: 100%;
+  max-width: 160px;
+  margin: 0 auto 10px;
+}
