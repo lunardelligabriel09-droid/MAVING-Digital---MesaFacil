@@ -299,3 +299,20 @@ body {
   gap: 14px;
   margin-bottom: 16px;
 }
+
+.seletor-quantidade button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--cor-borda);
+  background: var(--cor-superficie);
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.seletor-quantidade span {
+  font-size: 1.1rem;
+  font-weight: 700;
+  min-width: 24px;
+  text-align: center;
+}
