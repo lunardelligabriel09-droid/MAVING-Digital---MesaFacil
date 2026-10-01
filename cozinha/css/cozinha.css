@@ -18,3 +18,9 @@
   margin: 0;
 }
 
+.cabecalho-acoes {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
