@@ -85,7 +85,7 @@
   font-size: 0.85rem;
   color: var(--cor-texto-suave);
   font-weight: 600;
-};
+}
 
 .cartao-pedido-mesa {
   font-size: 0.95rem;
@@ -109,4 +109,20 @@
 
 .cartao-pedido-itens li {
   padding: 2px 0;
+}
+
+.cartao-pedido-obs {
+  background: var(--cor-alerta-bg);
+  color: var(--cor-alerta);
+  padding: 8px 10px;
+  border-radius: var(--raio-pequeno);
+  font-size: 0.85rem;
+}
+
+.cartao-pedido-acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: auto;
+  padding-top: 8px;
 }
