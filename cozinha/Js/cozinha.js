@@ -140,3 +140,11 @@ const el = (id) => document.getElementById(id);
           }
         </div>
       `;
+
+            div.querySelectorAll("[data-status]").forEach((botao) => {
+        botao.addEventListener("click", () => alterarStatus(botao.dataset.id, botao.dataset.status));
+      });
+
+      container.appendChild(div);
+    });
+  }
