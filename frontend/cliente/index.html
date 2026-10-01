@@ -8,11 +8,12 @@
   <link rel="stylesheet" href="/app/cliente/css/cliente.css" />
 </head>
 <body>
+  
   <div id="tela-carregando" class="tela-cheia texto-centro">
     <div class="carregando">Carregando MesaFácil…</div>
   </div>
 
-  <!-- Tela de erro -->
+  
   <div id="tela-erro" class="tela-cheia texto-centro oculto">
     <div class="cartao-erro">
       <h1>Ops!</h1>
@@ -21,7 +22,7 @@
     </div>
   </div>
 
-  <!-- Tela de identificação -->
+  
   <div id="tela-identificacao" class="tela-cheia oculto">
     <div class="cartao-boas-vindas">
       <img src="/app/shared/img/logo.svg" alt="" width="56" height="56" />
@@ -40,7 +41,7 @@
     </div>
   </div>
 
-  <!-- Tela principal -->
+  
   <div id="app-cliente" class="oculto">
     <header class="cabecalho-cliente">
       <div class="cabecalho-info">
@@ -51,7 +52,7 @@
     </header>
 
     <main class="conteudo-cliente">
-      
+     
       <section id="aba-cardapio" class="aba">
         <div class="barra-busca">
           <input type="search" id="input-busca" placeholder="Buscar no cardápio…" />
@@ -62,7 +63,7 @@
         </div>
       </section>
 
-    
+      
       <section id="aba-carrinho" class="aba oculto">
         <h2>Seu pedido</h2>
         <div id="alerta-carrinho"></div>
@@ -77,7 +78,7 @@
         </div>
       </section>
 
-
+      
       <section id="aba-pedidos" class="aba oculto">
         <h2>Acompanhar pedidos</h2>
         <div id="lista-pedidos-cliente">
@@ -100,6 +101,7 @@
     </nav>
   </div>
 
+  
   <div id="modal-produto" class="modal oculto">
     <div class="modal-conteudo">
       <button class="modal-fechar" id="btn-fechar-modal" aria-label="Fechar">×</button>
@@ -107,7 +109,7 @@
     </div>
   </div>
 
-    <script src="/app/shared/js/api.js"></script>
+  <script src="/app/shared/js/api.js"></script>
   <script src="/app/cliente/js/cliente.js"></script>
 </body>
 </html>

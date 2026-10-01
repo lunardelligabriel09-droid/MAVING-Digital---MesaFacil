@@ -49,9 +49,9 @@ body {
   margin-top: 16px;
 }
 
-/* ---------------------------------------------------------
-   app principal
-   --------------------------------------------------------- */
+/* 
+   Layout principal
+  */
 #app-cliente {
   min-height: 100vh;
   display: flex;
@@ -104,9 +104,9 @@ body {
   margin-bottom: 16px;
 }
 
-/* ---------------------------------------------------------
+/* 
    Cardápio
-   --------------------------------------------------------- */
+    */
 .barra-busca {
   margin-bottom: 14px;
 }
@@ -228,9 +228,9 @@ body {
   color: var(--cor-primaria);
 }
 
-/* ---------------------------------------------------------
+/* 
    Modal de produto
-   --------------------------------------------------------- */
+   */
 .modal {
   position: fixed;
   inset: 0;
@@ -318,9 +318,9 @@ body {
   text-align: center;
 }
 
-/* ---------------------------------------------------------
+/* 
    Carrinho
-   --------------------------------------------------------- */
+    */
 .item-carrinho {
   display: flex;
   justify-content: space-between;
@@ -381,9 +381,9 @@ body {
   margin-bottom: 12px;
 }
 
-/* ---------------------------------------------------------
+/* 
    Acompanhamento de pedidos
-   --------------------------------------------------------- */
+    */
 .cartao-pedido-cliente {
   background: var(--cor-superficie);
   border: 1px solid var(--cor-borda);
@@ -412,9 +412,9 @@ body {
   color: var(--cor-primaria);
 }
 
-/* ---------------------------------------------------------
-   Navegação inferior
-   --------------------------------------------------------- */
+/* 
+   Navegação 
+  */
 .nav-inferior {
   position: fixed;
   bottom: 0;

@@ -99,9 +99,9 @@
   color: var(--cor-primaria);
 }
 
-/* ---------------------------------------------------------
+/* 
    Detalhe da comanda
-   --------------------------------------------------------- */
+   */
 .info-comanda {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));

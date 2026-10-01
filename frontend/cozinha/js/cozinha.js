@@ -1,4 +1,6 @@
-
+/**
+ * MesaFácil — Painel da Cozinha.
+ */
 (() => {
   const INTERVALO_POLLING_MS = 5000;
   const MINUTOS_PARA_ALERTA = 15;
@@ -23,7 +25,7 @@
     ENTREGUE: "Marcar como entregue",
   };
 
-const el = (id) => document.getElementById(id);
+  const el = (id) => document.getElementById(id);
   let pollingId = null;
 
   function usuarioValido() {
@@ -45,14 +47,14 @@ const el = (id) => document.getElementById(id);
     if (pollingId) clearInterval(pollingId);
   }
 
-      el("form-login").addEventListener("submit", async (evento) => {
+  el("form-login").addEventListener("submit", async (evento) => {
     evento.preventDefault();
     const alerta = el("alerta-login");
     alerta.innerHTML = "";
     const email = el("input-email").value.trim();
     const senha = el("input-senha").value;
 
-     try {
+    try {
       const resultado = await MesaFacilAPI.post("/api/auth/login", { email, senha }, { autenticado: false });
       if (!["cozinha", "admin"].includes(resultado.dados.usuario.tipo_usuario)) {
         alerta.innerHTML = '<div class="alerta alerta-erro">Esta conta não tem acesso à cozinha.</div>';
@@ -65,7 +67,7 @@ const el = (id) => document.getElementById(id);
     }
   });
 
-    el("btn-sair").addEventListener("click", () => {
+  el("btn-sair").addEventListener("click", () => {
     MesaFacilAPI.limparSessao();
     mostrarLogin();
   });
@@ -88,12 +90,12 @@ const el = (id) => document.getElementById(id);
     return data.toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" });
   }
 
-    function minutosDesde(dataHora) {
+  function minutosDesde(dataHora) {
     const data = new Date(dataHora.replace(" ", "T"));
     return (Date.now() - data.getTime()) / 60000;
   }
 
-    function renderizarPedidos(pedidos) {
+  function renderizarPedidos(pedidos) {
     const container = el("quadro-pedidos");
 
     if (pedidos.length === 0) {
@@ -101,12 +103,13 @@ const el = (id) => document.getElementById(id);
       return;
     }
 
-        container.innerHTML = "";
+    container.innerHTML = "";
     pedidos.forEach((pedido) => {
       const antigo = minutosDesde(pedido.data_hora) >= MINUTOS_PARA_ALERTA;
       const div = document.createElement("div");
       div.className = `cartao-pedido status-${pedido.nome_status.toLowerCase()} ${antigo ? "pedido-antigo" : ""}`;
-            const itensHtml = pedido.itens
+
+      const itensHtml = pedido.itens
         .map((item) => `<li>${item.quantidade}x ${item.nome_produto}</li>`)
         .join("");
 
@@ -114,6 +117,7 @@ const el = (id) => document.getElementById(id);
         .filter((item) => item.observacao)
         .map((item) => `${item.nome_produto}: ${item.observacao}`)
         .join(" · ");
+
       const proximo = PROXIMO_STATUS[pedido.nome_status];
 
       div.innerHTML = `
@@ -124,7 +128,6 @@ const el = (id) => document.getElementById(id);
         <div class="cartao-pedido-mesa">Mesa ${String(pedido.numero_mesa).padStart(2, "0")}</div>
         <div class="cartao-pedido-cliente">Cliente: ${pedido.nome_cliente}</div>
         <ul class="cartao-pedido-itens">${itensHtml}</ul>
-                <ul class="cartao-pedido-itens">${itensHtml}</ul>
         ${observacoes ? `<div class="cartao-pedido-obs">Observação: ${observacoes}</div>` : ""}
         <div class="cartao-pedido-acoes">
           <button class="botao-status status-atual" disabled>${ROTULO_STATUS[pedido.nome_status]}</button>
@@ -141,7 +144,7 @@ const el = (id) => document.getElementById(id);
         </div>
       `;
 
-            div.querySelectorAll("[data-status]").forEach((botao) => {
+      div.querySelectorAll("[data-status]").forEach((botao) => {
         botao.addEventListener("click", () => alterarStatus(botao.dataset.id, botao.dataset.status));
       });
 

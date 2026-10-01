@@ -21,8 +21,7 @@
       MesaFacilAPI.setSessao(resultado.dados.token, resultado.dados.usuario);
       window.location.href = "/admin/dashboard";
     } catch (err) {
-     
-       alerta.innerHTML = `<div class="alerta alerta-erro">${err.message}</div>`;
+      alerta.innerHTML = `<div class="alerta alerta-erro">${err.message}</div>`;
     }
   });
 })();

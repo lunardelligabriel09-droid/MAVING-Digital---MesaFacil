@@ -4,11 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>MesaFácil — Cozinha</title>
-   <link rel="stylesheet" href="/app/shared/css/base.css" />
+  <link rel="stylesheet" href="/app/shared/css/base.css" />
   <link rel="stylesheet" href="/app/cozinha/css/cozinha.css" />
 </head>
 <body>
-  <!-- T Login -->
+  <!-- Login -->
   <div id="tela-login" class="tela-login">
     <div class="cartao-login">
       <img src="/app/shared/img/logo.svg" alt="" width="48" height="48" />
@@ -20,7 +20,7 @@
           <label for="input-email">E-mail</label>
           <input type="email" id="input-email" required autocomplete="username" />
         </div>
-         <div class="campo">
+        <div class="campo">
           <label for="input-senha">Senha</label>
           <input type="password" id="input-senha" required autocomplete="current-password" />
         </div>
@@ -28,7 +28,8 @@
       </form>
     </div>
   </div>
-    <!-- P da cozinha -->
+
+  <!-- Painel da cozinha -->
   <div id="painel-cozinha" class="oculto">
     <header class="cabecalho-cozinha">
       <h1>Pedidos da Cozinha</h1>
@@ -41,9 +42,8 @@
       <div class="carregando">Carregando pedidos…</div>
     </main>
   </div>
+
   <script src="/app/shared/js/api.js"></script>
   <script src="/app/cozinha/js/cozinha.js"></script>
 </body>
 </html>
-
-

@@ -1,4 +1,7 @@
-
+/* =========================================================
+   MesaFácil — Painel da Cozinha (tablet / notebook)
+   Foco: velocidade e legibilidade. Sem gráficos, sem ruído.
+   ========================================================= */
 
 .cabecalho-cozinha {
   background: var(--cor-primaria-escura);
@@ -31,7 +34,6 @@
 .cabecalho-acoes .btn-texto {
   color: #f0e5d8;
 }
-
 
 .quadro-pedidos {
   padding: 20px;
@@ -92,7 +94,6 @@
   font-weight: 700;
   color: var(--cor-primaria);
 }
-
 
 .cartao-pedido-cliente {
   font-size: 0.85rem;

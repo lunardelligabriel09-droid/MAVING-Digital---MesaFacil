@@ -95,6 +95,7 @@
         `);
       });
     });
+
     el("resumo-impressao").innerHTML = `
       <h1>Trattoria Famiglia Rossi</h1>
       <div class="subtitulo">MesaFácil — Resumo da Comanda</div>
@@ -125,4 +126,3 @@
 
   carregar();
 })();
-

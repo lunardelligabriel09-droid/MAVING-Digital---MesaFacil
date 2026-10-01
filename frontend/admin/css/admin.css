@@ -1,4 +1,5 @@
 
+
 .layout-admin {
   display: flex;
   min-height: 100vh;
@@ -109,9 +110,9 @@
   max-width: 1200px;
 }
 
-/* ---------------------------------------------------------
-   Cartões de indicadores 
-   --------------------------------------------------------- */
+/* 
+   Cartões dos indicadores 
+  */
 .grade-indicadores {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -142,9 +143,9 @@
   font-family: var(--fonte-titulo);
 }
 
-/* ---------------------------------------------------------
-   Barra de ações, com tabelas
-   --------------------------------------------------------- */
+/* 
+   Barra de ações e tabelas
+   */
 .barra-acoes {
   display: flex;
   justify-content: space-between;
@@ -214,10 +215,9 @@
   color: var(--cor-texto-suave);
 }
 
-/* ---------------------------------------------------------
-   Modal de formulário
-   --------------------------------------------------------- */
-
+/* 
+   formulário
+    */
 .modal-admin {
   position: fixed;
   inset: 0;
@@ -275,9 +275,9 @@
   margin-bottom: 10px;
 }
 
-/* ---------------------------------------------------------
+/* 
    QR Code das mesas
-   --------------------------------------------------------- */
+   */
 .grade-qrcodes {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
@@ -298,9 +298,9 @@
   margin: 0 auto 10px;
 }
 
-/* ---------------------------------------------------------
+/*
    Responsividade
-   --------------------------------------------------------- */
+    */
 @media (max-width: 900px) {
   .barra-lateral {
     position: fixed;

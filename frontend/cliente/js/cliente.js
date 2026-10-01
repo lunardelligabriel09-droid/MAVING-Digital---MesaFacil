@@ -37,7 +37,7 @@
   }
 
   // -----------------------------------------------------------------
-  // identificação da mesa
+  // Inicialização / identificação da mesa
   // -----------------------------------------------------------------
   async function iniciar() {
     if (!token) {
@@ -106,7 +106,7 @@
   });
 
   // -----------------------------------------------------------------
-  // Parte principal
+  // App principal
   // -----------------------------------------------------------------
   function iniciarApp() {
     el("texto-mesa").textContent = `Mesa ${String(sessao.mesa.numero).padStart(2, "0")}`;
@@ -230,7 +230,9 @@
     return div;
   }
 
-  
+  // -----------------------------------------------------------------
+  // Modal do produto
+  // -----------------------------------------------------------------
   function abrirModalProduto(produto) {
     let quantidade = 1;
     const corpo = el("modal-produto-corpo");
@@ -387,8 +389,9 @@
       botao.textContent = "Enviar pedido";
     }
   });
- // -----------------------------------------------------------------
-  // Observações
+
+  // -----------------------------------------------------------------
+  // Acompanhamento de pedidos
   // -----------------------------------------------------------------
   async function carregarPedidosCliente() {
     try {
