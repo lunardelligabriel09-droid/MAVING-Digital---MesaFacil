@@ -148,3 +148,19 @@ const el = (id) => document.getElementById(id);
       container.appendChild(div);
     });
   }
+
+  async function alterarStatus(idPedido, novoStatus) {
+    try {
+      await MesaFacilAPI.put(`/api/pedidos/${idPedido}/status`, { status: novoStatus });
+      carregarPedidos();
+    } catch (err) {
+      alert(err.message);
+    }
+  }
+
+  if (usuarioValido()) {
+    mostrarPainel();
+  } else {
+    mostrarLogin();
+  }
+})();
