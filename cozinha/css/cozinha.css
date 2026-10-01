@@ -86,3 +86,9 @@
   color: var(--cor-texto-suave);
   font-weight: 600;
 };
+
+.cartao-pedido-mesa {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--cor-primaria);
+}
