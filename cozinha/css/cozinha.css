@@ -69,3 +69,20 @@
 .cartao-pedido.pedido-antigo {
   box-shadow: 0 0 0 2px var(--cor-perigo), var(--sombra);
 }
+
+.cartao-pedido-topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.cartao-pedido-topo h2 {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.cartao-pedido-horario {
+  font-size: 0.85rem;
+  color: var(--cor-texto-suave);
+  font-weight: 600;
+};
