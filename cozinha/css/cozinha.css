@@ -41,3 +41,15 @@
   max-width: 1600px;
   margin: 0 auto;
 }
+
+.cartao-pedido {
+  background: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  padding: 16px;
+  box-shadow: var(--sombra);
+  border-left: 6px solid var(--cor-info);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
