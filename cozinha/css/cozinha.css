@@ -138,3 +138,22 @@
   cursor: pointer;
   min-height: 40px;
 }
+
+.botao-status.status-atual {
+  background: var(--cor-texto);
+  color: #fff;
+  border-color: var(--cor-texto);
+  cursor: default;
+}
+
+.botao-status.avancar {
+  background: var(--cor-sucesso);
+  color: #fff;
+  border-color: var(--cor-sucesso);
+}
+
+.botao-status.cancelar {
+  background: var(--cor-superficie);
+  color: var(--cor-perigo);
+  border-color: var(--cor-perigo);
+}
