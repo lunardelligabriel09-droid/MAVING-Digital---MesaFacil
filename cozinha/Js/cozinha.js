@@ -52,3 +52,16 @@ const el = (id) => document.getElementById(id);
     const email = el("input-email").value.trim();
     const senha = el("input-senha").value;
 
+     try {
+      const resultado = await MesaFacilAPI.post("/api/auth/login", { email, senha }, { autenticado: false });
+      if (!["cozinha", "admin"].includes(resultado.dados.usuario.tipo_usuario)) {
+        alerta.innerHTML = '<div class="alerta alerta-erro">Esta conta não tem acesso à cozinha.</div>';
+        return;
+      }
+      MesaFacilAPI.setSessao(resultado.dados.token, resultado.dados.usuario);
+      mostrarPainel();
+    } catch (err) {
+      alerta.innerHTML = `<div class="alerta alerta-erro">${err.message}</div>`;
+    }
+  });
+
