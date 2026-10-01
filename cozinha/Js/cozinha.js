@@ -43,6 +43,12 @@ const el = (id) => document.getElementById(id);
     el("painel-cozinha").classList.add("oculto");
     el("tela-login").classList.remove("oculto");
     if (pollingId) clearInterval(pollingId);
-  }:; 
+  }:;
 
+      el("form-login").addEventListener("submit", async (evento) => {
+    evento.preventDefault();
+    const alerta = el("alerta-login");
+    alerta.innerHTML = "";
+    const email = el("input-email").value.trim();
+    const senha = el("input-senha").value;
 
