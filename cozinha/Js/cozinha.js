@@ -124,3 +124,19 @@ const el = (id) => document.getElementById(id);
         <div class="cartao-pedido-mesa">Mesa ${String(pedido.numero_mesa).padStart(2, "0")}</div>
         <div class="cartao-pedido-cliente">Cliente: ${pedido.nome_cliente}</div>
         <ul class="cartao-pedido-itens">${itensHtml}</ul>
+                <ul class="cartao-pedido-itens">${itensHtml}</ul>
+        ${observacoes ? `<div class="cartao-pedido-obs">Observação: ${observacoes}</div>` : ""}
+        <div class="cartao-pedido-acoes">
+          <button class="botao-status status-atual" disabled>${ROTULO_STATUS[pedido.nome_status]}</button>
+          ${
+            proximo
+              ? `<button class="botao-status avancar" data-id="${pedido.id_pedido}" data-status="${proximo}">${ROTULO_ACAO[proximo]}</button>`
+              : ""
+          }
+          ${
+            pedido.nome_status !== "ENTREGUE" && pedido.nome_status !== "CANCELADO"
+              ? `<button class="botao-status cancelar" data-id="${pedido.id_pedido}" data-status="CANCELADO">Cancelar</button>`
+              : ""
+          }
+        </div>
+      `;
