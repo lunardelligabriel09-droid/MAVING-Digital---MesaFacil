@@ -31,3 +31,13 @@
 .cabecalho-acoes .btn-texto {
   color: #f0e5d8;
 }
+
+
+.quadro-pedidos {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+  max-width: 1600px;
+  margin: 0 auto;
+}
