@@ -53,3 +53,19 @@
   flex-direction: column;
   gap: 10px;
 }
+
+.cartao-pedido.status-recebido {
+  border-left-color: var(--cor-info);
+}
+
+.cartao-pedido.status-em_preparo {
+  border-left-color: var(--cor-alerta);
+}
+
+.cartao-pedido.status-pronto {
+  border-left-color: var(--cor-sucesso);
+}
+
+.cartao-pedido.pedido-antigo {
+  box-shadow: 0 0 0 2px var(--cor-perigo), var(--sombra);
+}
