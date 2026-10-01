@@ -87,3 +87,8 @@ const el = (id) => document.getElementById(id);
     const data = new Date(dataHora.replace(" ", "T"));
     return data.toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" });
   }
+
+    function minutosDesde(dataHora) {
+    const data = new Date(dataHora.replace(" ", "T"));
+    return (Date.now() - data.getTime()) / 60000;
+  }
