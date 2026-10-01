@@ -114,3 +114,13 @@ const el = (id) => document.getElementById(id);
         .filter((item) => item.observacao)
         .map((item) => `${item.nome_produto}: ${item.observacao}`)
         .join(" · ");
+      const proximo = PROXIMO_STATUS[pedido.nome_status];
+
+      div.innerHTML = `
+        <div class="cartao-pedido-topo">
+          <h2>Pedido #${pedido.id_pedido}</h2>
+          <span class="cartao-pedido-horario">${formatarHorario(pedido.data_hora)}</span>
+        </div>
+        <div class="cartao-pedido-mesa">Mesa ${String(pedido.numero_mesa).padStart(2, "0")}</div>
+        <div class="cartao-pedido-cliente">Cliente: ${pedido.nome_cliente}</div>
+        <ul class="cartao-pedido-itens">${itensHtml}</ul>
