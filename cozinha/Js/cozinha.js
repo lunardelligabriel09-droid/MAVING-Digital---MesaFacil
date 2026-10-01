@@ -65,3 +65,20 @@ const el = (id) => document.getElementById(id);
     }
   });
 
+    el("btn-sair").addEventListener("click", () => {
+    MesaFacilAPI.limparSessao();
+    mostrarLogin();
+  });
+
+  async function carregarPedidos() {
+    try {
+      const resultado = await MesaFacilAPI.get("/api/pedidos/cozinha");
+      renderizarPedidos(resultado.dados);
+    } catch (err) {
+      if (err.status === 401 || err.status === 403) {
+        mostrarLogin();
+        return;
+      }
+      el("quadro-pedidos").innerHTML = `<div class="alerta alerta-erro">${err.message}</div>`;
+    }
+  }
