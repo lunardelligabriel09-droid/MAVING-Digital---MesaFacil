@@ -100,3 +100,9 @@ const el = (id) => document.getElementById(id);
       container.innerHTML = '<div class="vazio">Nenhum pedido em andamento no momento.</div>';
       return;
     }
+
+        container.innerHTML = "";
+    pedidos.forEach((pedido) => {
+      const antigo = minutosDesde(pedido.data_hora) >= MINUTOS_PARA_ALERTA;
+      const div = document.createElement("div");
+      div.className = `cartao-pedido status-${pedido.nome_status.toLowerCase()} ${antigo ? "pedido-antigo" : ""}`;:''
