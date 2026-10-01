@@ -92,3 +92,11 @@ const el = (id) => document.getElementById(id);
     const data = new Date(dataHora.replace(" ", "T"));
     return (Date.now() - data.getTime()) / 60000;
   }
+
+    function renderizarPedidos(pedidos) {
+    const container = el("quadro-pedidos");
+
+    if (pedidos.length === 0) {
+      container.innerHTML = '<div class="vazio">Nenhum pedido em andamento no momento.</div>';
+      return;
+    }
