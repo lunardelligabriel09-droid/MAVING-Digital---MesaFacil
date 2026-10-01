@@ -106,3 +106,11 @@ const el = (id) => document.getElementById(id);
       const antigo = minutosDesde(pedido.data_hora) >= MINUTOS_PARA_ALERTA;
       const div = document.createElement("div");
       div.className = `cartao-pedido status-${pedido.nome_status.toLowerCase()} ${antigo ? "pedido-antigo" : ""}`;:''
+            const itensHtml = pedido.itens
+        .map((item) => `<li>${item.quantidade}x ${item.nome_produto}</li>`)
+        .join("");
+
+      const observacoes = pedido.itens
+        .filter((item) => item.observacao)
+        .map((item) => `${item.nome_produto}: ${item.observacao}`)
+        .join(" · ");
