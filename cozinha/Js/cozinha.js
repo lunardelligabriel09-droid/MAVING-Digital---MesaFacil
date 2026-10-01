@@ -82,3 +82,8 @@ const el = (id) => document.getElementById(id);
       el("quadro-pedidos").innerHTML = `<div class="alerta alerta-erro">${err.message}</div>`;
     }
   }
+
+  function formatarHorario(dataHora) {
+    const data = new Date(dataHora.replace(" ", "T"));
+    return data.toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" });
+  }
