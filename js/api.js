@@ -6,3 +6,8 @@ const MesaFacilAPI = (() => {
   function getToken() {
     return localStorage.getItem(TOKEN_KEY);
   }
+
+   function getUsuario() {
+    const raw = localStorage.getItem(USUARIO_KEY);
+    return raw ? JSON.parse(raw) : null;
+  }
