@@ -206,3 +206,14 @@ textarea {
   color: var(--cor-texto-suave);
   margin-top: 4px;
 }
+
+
+/* ---------------------------------------------------------
+   Cartão
+   --------------------------------------------------------- */
+.cartao {
+  background: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra);
+}
