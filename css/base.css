@@ -288,3 +288,29 @@ textarea {
   border-color: rgba(57, 95, 125, 0.25);
 }
 
+/* ---------------------------------------------------------
+   Utilidades
+   --------------------------------------------------------- */
+.somente-leitura-texto {
+  color: var(--cor-texto-suave);
+}
+
+.texto-centro {
+  text-align: center;
+}
+
+.oculto {
+  display: none !important;
+}
+
+.carregando {
+  text-align: center;
+  color: var(--cor-texto-suave);
+  padding: 24px;
+}
+
+.vazio {
+  text-align: center;
+  color: var(--cor-texto-suave);
+  padding: 32px 16px;
+}
