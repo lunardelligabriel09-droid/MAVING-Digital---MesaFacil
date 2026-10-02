@@ -145,3 +145,18 @@ textarea {
   background: var(--cor-perigo);
   color: #fff;
 }
+
+
+.btn-perigo:hover:not(:disabled) {
+  opacity: 0.9;
+}
+
+.btn-bloco {
+  width: 100%;
+}
+
+.btn-pequeno {
+  padding: 8px 14px;
+  font-size: 0.85rem;
+  min-height: 36px;
+}
