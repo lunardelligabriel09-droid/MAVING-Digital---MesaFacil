@@ -86,3 +86,26 @@ textarea {
   margin: 0 auto;
   padding: 0 16px;
 }
+
+
+
+
+/* ---------------------------------------------------------
+   Botões
+   --------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 22px;
+  border-radius: var(--raio-pequeno);
+  border: 1px solid transparent;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease, opacity 0.15s ease;
+  min-height: 44px;
+  text-decoration: none;
+  line-height: 1.1;
+}
