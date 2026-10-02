@@ -325,3 +325,15 @@ textarea {
   background: var(--cor-borda);
   border-radius: 8px;
 }
+
+/* ---------------------------------------------------------
+   Tela de login 
+   --------------------------------------------------------- */
+.tela-login {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--cor-fundo-alt);
+  padding: 24px 16px;
+}
