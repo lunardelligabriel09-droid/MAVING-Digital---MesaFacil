@@ -36,3 +36,8 @@ const MesaFacilAPI = (() => {
         headers["Authorization"] = `Bearer ${token}`;
       }
     }
+
+        const options = { method, headers };
+    if (body !== undefined) {
+      options.body = isFormData ? body : JSON.stringify(body);
+    }
