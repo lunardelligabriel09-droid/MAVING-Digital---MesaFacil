@@ -1,6 +1,4 @@
-/**
- * MesaFácil — Painel da Cozinha.
- */
+
 (() => {
   const INTERVALO_POLLING_MS = 5000;
   const MINUTOS_PARA_ALERTA = 15;
