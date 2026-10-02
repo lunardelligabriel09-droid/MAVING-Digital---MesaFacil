@@ -1,0 +1,79 @@
+
+
+.resumo-impressao {
+  display: none;
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  .resumo-impressao,
+  .resumo-impressao * {
+    visibility: visible;
+  }
+
+  .resumo-impressao {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 12px;
+    font-family: "Courier New", monospace;
+    color: #000;
+    background: #fff;
+  }
+
+  .resumo-impressao h1 {
+    font-family: var(--fonte-titulo, Georgia, serif);
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 2px;
+  }
+
+  .resumo-impressao .subtitulo {
+    text-align: center;
+    font-size: 0.75rem;
+    margin-bottom: 10px;
+  }
+
+  .resumo-impressao .linha {
+    border-top: 1px dashed #000;
+    margin: 8px 0;
+  }
+
+  .resumo-impressao table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.8rem;
+  }
+
+  .resumo-impressao th,
+  .resumo-impressao td {
+    text-align: left;
+    padding: 2px 0;
+  }
+
+  .resumo-impressao .col-valor {
+    text-align: right;
+  }
+
+  .resumo-impressao .total {
+    font-size: 1rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+
+  .resumo-impressao .observacao {
+    font-style: italic;
+    font-size: 0.75rem;
+  }
+
+  @page {
+    margin: 10mm;
+  }
+}
