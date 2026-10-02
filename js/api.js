@@ -41,3 +41,10 @@ const MesaFacilAPI = (() => {
     if (body !== undefined) {
       options.body = isFormData ? body : JSON.stringify(body);
     }
+
+    let response;
+    try {
+      response = await fetch(path, options);
+    } catch (err) {
+      throw new ApiError("Não foi possível conectar ao servidor. Verifique sua conexão.", 0);
+    }
