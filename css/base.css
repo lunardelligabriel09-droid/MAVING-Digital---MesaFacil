@@ -119,3 +119,13 @@ textarea {
   background: var(--cor-primaria);
   color: #fff;
 }
+
+.btn-primaria:hover:not(:disabled) {
+  background: var(--cor-primaria-escura);
+}
+
+.btn-secundaria {
+  background: var(--cor-superficie);
+  color: var(--cor-primaria);
+  border-color: var(--cor-primaria);
+}
