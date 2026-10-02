@@ -175,3 +175,20 @@ textarea {
   font-size: 0.9rem;
   color: var(--cor-texto);
 }
+
+.campo input,
+.campo select,
+.campo textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-pequeno);
+  background: var(--cor-superficie);
+  color: var(--cor-texto);
+  min-height: 44px;
+}
+
+.campo textarea {
+  min-height: 80px;
+  resize: vertical;
+}
