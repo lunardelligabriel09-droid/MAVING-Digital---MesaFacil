@@ -48,3 +48,13 @@ const MesaFacilAPI = (() => {
     } catch (err) {
       throw new ApiError("Não foi possível conectar ao servidor. Verifique sua conexão.", 0);
     }
+
+        if (response.status === 401 && autenticado) {
+      limparSessao();
+    }
+
+    let payload = null;
+    const contentType = response.headers.get("content-type") || "";
+    if (contentType.includes("application/json")) {
+      payload = await response.json().catch(() => null);
+    }
