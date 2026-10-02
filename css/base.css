@@ -243,3 +243,18 @@ textarea {
   background: var(--cor-alerta-bg);
   color: var(--cor-alerta);
 }
+
+.selo-pronto {
+  background: var(--cor-sucesso-bg);
+  color: var(--cor-sucesso);
+}
+
+.selo-entregue {
+  background: #eee;
+  color: var(--cor-texto-suave);
+}
+
+.selo-cancelado {
+  background: var(--cor-perigo-bg);
+  color: var(--cor-perigo);
+}
