@@ -160,3 +160,18 @@ textarea {
   font-size: 0.85rem;
   min-height: 36px;
 }
+
+/* ---------------------------------------------------------
+   Formulários
+   --------------------------------------------------------- */
+.campo {
+  margin-bottom: 16px;
+}
+
+.campo label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--cor-texto);
+}
