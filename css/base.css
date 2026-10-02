@@ -275,3 +275,16 @@ textarea {
   color: var(--cor-perigo);
   border-color: rgba(166, 58, 58, 0.25);
 }
+
+.alerta-sucesso {
+  background: var(--cor-sucesso-bg);
+  color: var(--cor-sucesso);
+  border-color: rgba(63, 125, 79, 0.25);
+}
+
+.alerta-info {
+  background: var(--cor-info-bg);
+  color: var(--cor-info);
+  border-color: rgba(57, 95, 125, 0.25);
+}
+
