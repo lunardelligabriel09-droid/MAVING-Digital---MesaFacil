@@ -17,3 +17,8 @@ const MesaFacilAPI = (() => {
     localStorage.setItem(TOKEN_KEY, token);
     localStorage.setItem(USUARIO_KEY, JSON.stringify(usuario));
   }
+
+   function limparSessao() {
+    localStorage.removeItem(TOKEN_KEY);
+    localStorage.removeItem(USUARIO_KEY);
+  }
