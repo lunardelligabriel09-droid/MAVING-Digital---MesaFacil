@@ -29,3 +29,10 @@ const MesaFacilAPI = (() => {
     if (!isFormData) {
       headers["Content-Type"] = "application/json";
     }
+
+     if (autenticado) {
+      const token = getToken();
+      if (token) {
+        headers["Authorization"] = `Bearer ${token}`;
+      }
+    }
