@@ -348,3 +348,12 @@ textarea {
   width: 100%;
   text-align: center;
 }
+
+.cartao-login img {
+  margin: 0 auto 10px;
+}
+
+.cartao-login form {
+  text-align: left;
+  margin-top: 18px;
+}
