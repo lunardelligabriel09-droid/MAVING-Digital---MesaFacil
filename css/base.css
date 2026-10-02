@@ -109,3 +109,13 @@ textarea {
   text-decoration: none;
   line-height: 1.1;
 }
+
+.btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.btn-primaria {
+  background: var(--cor-primaria);
+  color: #fff;
+}
