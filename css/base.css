@@ -129,3 +129,19 @@ textarea {
   color: var(--cor-primaria);
   border-color: var(--cor-primaria);
 }
+
+.btn-secundaria:hover:not(:disabled) {
+  background: var(--cor-fundo-alt);
+}
+
+.btn-texto {
+  background: transparent;
+  color: var(--cor-texto-suave);
+  padding: 8px 10px;
+  min-height: auto;
+}
+
+.btn-perigo {
+  background: var(--cor-perigo);
+  color: #fff;
+}
