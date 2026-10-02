@@ -66,3 +66,29 @@ const MesaFacilAPI = (() => {
 
     return payload;
   }
+
+  
+
+
+
+  class ApiError extends Error {
+    constructor(message, status, details) {
+      super(message);
+      this.status = status;
+      this.details = details;
+    }
+  }
+
+  return {
+    get: (path, opts) => request("GET", path, opts),
+    post: (path, body, opts) => request("POST", path, { ...opts, body }),
+    put: (path, body, opts) => request("PUT", path, { ...opts, body }),
+    del: (path, opts) => request("DELETE", path, opts),
+    postForm: (path, formData, opts) => request("POST", path, { ...opts, body: formData, isFormData: true }),
+    getToken,
+    getUsuario,
+    setSessao,
+    limparSessao,
+    ApiError,
+  };
+})();
