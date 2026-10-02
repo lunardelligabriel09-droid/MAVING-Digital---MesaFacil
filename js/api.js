@@ -22,3 +22,10 @@ const MesaFacilAPI = (() => {
     localStorage.removeItem(TOKEN_KEY);
     localStorage.removeItem(USUARIO_KEY);
   }
+
+  
+  async function request(method, path, { body, autenticado = true, isFormData = false } = {}) {
+    const headers = {};
+    if (!isFormData) {
+      headers["Content-Type"] = "application/json";
+    }
