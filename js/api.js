@@ -58,3 +58,11 @@ const MesaFacilAPI = (() => {
     if (contentType.includes("application/json")) {
       payload = await response.json().catch(() => null);
     }
+
+        if (!response.ok) {
+      const mensagem = payload?.mensagem || `Erro inesperado (HTTP ${response.status}).`;
+      throw new ApiError(mensagem, response.status, payload?.detalhes);
+    }
+
+    return payload;
+  }
