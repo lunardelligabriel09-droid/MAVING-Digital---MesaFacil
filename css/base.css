@@ -217,3 +217,29 @@ textarea {
   border-radius: var(--raio);
   box-shadow: var(--sombra);
 }
+
+/* ---------------------------------------------------------
+    status
+   --------------------------------------------------------- */
+.selo {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+}
+
+.selo-recebido {
+  background: var(--cor-info-bg);
+  color: var(--cor-info);
+}
+
+.selo-em_preparo {
+  background: var(--cor-alerta-bg);
+  color: var(--cor-alerta);
+}
