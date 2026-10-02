@@ -192,3 +192,17 @@ textarea {
   min-height: 80px;
   resize: vertical;
 }
+
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus {
+  outline: none;
+  border-color: var(--cor-primaria);
+  box-shadow: 0 0 0 3px rgba(107, 30, 35, 0.12);
+}
+
+.campo-ajuda {
+  font-size: 0.8rem;
+  color: var(--cor-texto-suave);
+  margin-top: 4px;
+};
