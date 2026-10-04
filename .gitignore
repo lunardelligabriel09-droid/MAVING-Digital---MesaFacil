@@ -1,0 +1,11 @@
+# Ambiente Python
+backend/.venv/
+backend/__pycache__/
+backend/**/__pycache__/
+*.pyc
+
+# Variáveis de ambiente
+backend/.env
+.env
+
+
