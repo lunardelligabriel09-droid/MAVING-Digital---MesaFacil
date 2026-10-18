@@ -8,4 +8,11 @@ backend/**/__pycache__/
 backend/.env
 .env
 
+# Uploads de usuários
+backend/uploads/produtos/*
+!backend/uploads/produtos/.gitkeep
 
+# Sistema operacional / editor
+.DS_Store
+Thumbs.db
+.vscode/
